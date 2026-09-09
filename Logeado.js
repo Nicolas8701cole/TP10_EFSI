@@ -1,16 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import InscripcionScreen from './InscripcionScreen';
 
 export default function Logeado({ onCerrarSesion }) {
   return (
     <View style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <Text style={styles.bienvenida}>¡LOGRADO!</Text>
-        
-        <TouchableOpacity style={styles.botonVolver} onPress={onCerrarSesion}>
-          <Text style={styles.textoBoton}>Volver atrás</Text>
-        </TouchableOpacity>
-      </SafeAreaView>
+      <InscripcionScreen />
+
+      <TouchableOpacity style={styles.botonVolver} onPress={onCerrarSesion}>
+        <Text style={styles.textoBoton}>Cerrar sesión</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -18,28 +17,19 @@ export default function Logeado({ onCerrarSesion }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#bebebe',
-  },
-  safeArea: {
-    alignItems: 'center',
-  },
-  bienvenida: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#2300eb',
-    marginBottom: 30,
+    backgroundColor: '#101016',
   },
   botonVolver: {
+    position: 'absolute',
+    top: 45,
+    right: 15,
     backgroundColor: '#ffffff',
-    padding: 12,
-    borderRadius: 15,
-    width: 150,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 12,
   },
   textoBoton: {
-    textAlign: 'center',
     color: '#000000',
     fontWeight: 'bold',
-  }
+  },
 });
